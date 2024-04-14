@@ -7,15 +7,10 @@ pipeline {
   }
   stages {
     stage('Checkout') {
-      script {
-                    // Define GitHub credentials
-                    def gitCredentials = credentials('github')
-
-                    // Checkout the repository using Git with credentials
-                    git branch: 'main',
-                        credentialsId: gitCredentials,
-                        url: 'https://github.com/singhbad/Jenkins-Zero-To-Hero.git'
-                }
+      steps {
+        sh 'echo passed'
+        //git branch: 'main', url: 'https://github.com/singhbad/Jenkins-Zero-To-Hero.git'
+      }
     }
     stage('Build and Test') {
       steps {
